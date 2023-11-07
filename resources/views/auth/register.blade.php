@@ -12,16 +12,16 @@
 
             <div class="grid gap-6">
                 <!-- NIK -->
-                {{-- <div class="space-y-2">
+                <div class="space-y-2">
                     <x-label for="nik" :value="__('NIK')" />
                     <x-input-with-icon-wrapper>
                         <x-slot name="icon">
                             <x-heroicon-o-identification aria-hidden="true" class="w-5 h-5" />
                         </x-slot>
                         <x-input withicon id="nik" class="form-input block w-full" type="text" name="nik" :value="old('nik')"
-                            required autofocus placeholder="NIK" autocomplete="off" />
+                            required autofocus placeholder="{{ __('NIK') }}" autocomplete="off" />
                     </x-input-with-icon-wrapper>
-                </div> --}}
+                </div>
 
                 <!-- Name -->
                 <div class="space-y-2">
@@ -36,16 +36,16 @@
                 </div>
 
                 <!-- Username -->
-                {{-- <div class="space-y-2">
+                <div class="space-y-2">
                     <x-label for="username" :value="__('Username')" />
                     <x-input-with-icon-wrapper>
                         <x-slot name="icon">
                             <x-heroicon-o-user-circle aria-hidden="true" class="w-5 h-5" />
                         </x-slot>
                         <x-input withicon id="username" class="form-input block w-full" type="text" name="username" :value="old('username')"
-                            required autofocus placeholder="{{ __('Username') }}" autocomplete="off" />
+                            required autofocus placeholder="{{ __('Username') }}" autocomplete="username" />
                     </x-input-with-icon-wrapper>
-                </div> --}}
+                </div>
 
                 <!-- Email Address -->
                 <div class="space-y-2">
