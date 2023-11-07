@@ -29,7 +29,7 @@
                             @endif
                         </div>
 
-                        <div class="ms-3">
+                        <div class="ml-3">
                             <div class="text-sm text-gray-600 dark:text-gray-400">
                                 {{ $session->agent->platform() ? $session->agent->platform() : __('Unknown') }} - {{ $session->agent->browser() ? $session->agent->browser() : __('Unknown') }}
                             </div>
@@ -56,7 +56,7 @@
                 {{ __('Log Out Other Browser Sessions') }}
             </x-button>
 
-            <x-action-message class="ms-3" on="loggedOut">
+            <x-action-message class="ml-3" on="loggedOut">
                 {{ __('Done.') }}
             </x-action-message>
         </div>
@@ -71,8 +71,8 @@
                 {{ __('Please enter your password to confirm you would like to log out of your other browser sessions across all of your devices.') }}
 
                 <div class="mt-4" x-data="{}" x-on:confirming-logout-other-browser-sessions.window="setTimeout(() => $refs.password.focus(), 250)">
-                    <x-input type="password" class="mt-1 block w-3/4"
-                                autocomplete="current-password"
+                    <x-input id="logoutOtherBrowserSessions" name="logoutOtherBrowserSessions" type="password" class="form-input mt-1 block w-3/4"
+                                autocomplete="off"
                                 placeholder="{{ __('Password') }}"
                                 x-ref="password"
                                 wire:model="password"
@@ -83,11 +83,11 @@
             </x-slot>
 
             <x-slot name="footer">
-                <x-secondary-button wire:click="$toggle('confirmingLogout')" wire:loading.attr="disabled">
+                <x-button variant="info" wire:click="$toggle('confirmingLogout')" wire:loading.attr="disabled">
                     {{ __('Cancel') }}
-                </x-secondary-button>
+                </x-button>
 
-                <x-button class="ms-3"
+                <x-button class="ml-3"
                             wire:click="logoutOtherBrowserSessions"
                             wire:loading.attr="disabled">
                     {{ __('Log Out Other Browser Sessions') }}
