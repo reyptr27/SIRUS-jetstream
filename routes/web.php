@@ -24,9 +24,15 @@ Route::middleware([
     config('jetstream.auth_session'),
     'verified',
 ])->group(function () {
+    //Dashboard
     Route::get('/dashboard', function () {
         return view('dashboard');
     })->name('dashboard');
+
+    //Teams
+    Route::get('/teams', function () {
+        return view('teams.index');
+    })->name('teams.index');
 
     //Users
     Route::get('/users', [UserController::class, 'index'])->name('users.index');

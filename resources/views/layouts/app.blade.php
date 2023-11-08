@@ -42,7 +42,7 @@
                     <!-- Page Heading -->
                     @if (isset($header))
                         <header>
-                            <div class="px-4 py-6 mx-auto max-w-7xl w-full sm:px-6 lg:px-8">
+                            <div class="px-4 pt-7 pb-1 mx-auto max-w-7xl w-full sm:pt-10 sm:px-6 lg:px-8">
                                 {{ $header }}
                             </div>
                         </header>

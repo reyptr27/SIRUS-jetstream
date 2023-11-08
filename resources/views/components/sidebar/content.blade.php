@@ -78,7 +78,7 @@
                 <x-heroicon-o-office-building class="flex-shrink-0 w-6 h-6" aria-hidden="true" />
             </x-slot>
             
-            <x-sidebar.sublink title="Teams" href="{{ route('teams.create') }}"
+            <x-sidebar.sublink title="Teams" href="{{ route('teams.index') }}"
             :active="request()->routeIs('teams.index', 'teams.create')" />
             <x-sidebar.sublink title="Departments" href="#"
             :active="request()->routeIs('#')" />
