@@ -52,20 +52,37 @@
             </x-slot>
         </x-sidebar.link>
 
-        <x-sidebar.dropdown title="Manage User" :active="Str::startsWith(request()->route()->uri(), 'buttons')">
-            {{-- <x-slot name="icon">
-                <x-heroicon-o-office-building class="flex-shrink-0 w-6 h-6" aria-hidden="true" />
-            </x-slot> --}}
-
+        <x-sidebar.dropdown title="Manage User" 
+            :active="
+            Str::startsWith(request()->route()->uri(), 'users') || 
+            Str::startsWith(request()->route()->uri(), 'roles') || 
+            Str::startsWith(request()->route()->uri(), 'permissions')" >
+        
             <x-slot name="icon">
                 <x-heroicon-o-user-group class="flex-shrink-0 w-6 h-6" aria-hidden="true" />
             </x-slot>
             
+            <x-sidebar.sublink title="Users" href="{{ route('users.index') }}"
+            :active="request()->routeIs('users.index')" />
+            <x-sidebar.sublink title="Roles" href="#"
+            :active="request()->routeIs('#')" />
+            <x-sidebar.sublink title="Permissions" href="#"
+            :active="request()->routeIs('#')" />
+    </x-sidebar.dropdown>
+
+    <x-sidebar.dropdown title="Manage Structure" 
+            :active="
+            Str::startsWith(request()->route()->uri(), 'teams')" >
+        
+            <x-slot name="icon">
+                <x-heroicon-o-office-building class="flex-shrink-0 w-6 h-6" aria-hidden="true" />
+            </x-slot>
+            
+            <x-sidebar.sublink title="Teams" href="{{ route('teams.create') }}"
+            :active="request()->routeIs('teams.index', 'teams.create')" />
             <x-sidebar.sublink title="Departments" href="#"
             :active="request()->routeIs('#')" />
             <x-sidebar.sublink title="Divisions" href="#"
-            :active="request()->routeIs('#')" />
-            <x-sidebar.sublink title="Branchs" href="#"
             :active="request()->routeIs('#')" />
     </x-sidebar.dropdown>
        

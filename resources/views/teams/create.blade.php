@@ -6,6 +6,7 @@
         <h2 class="font-semibold text-xl leading-tight">
             {{ __('Create Team') }}
         </h2>
+        <p class="mt-2 text-sm text-gray-600 dark:text-gray-400">Page to create a new team.</p>
     </x-slot>
 
     <div>
