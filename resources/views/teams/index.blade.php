@@ -30,7 +30,7 @@
                 
                 <div class="relative h-10">
                     <select name="" id=""
-                        class="block appearance-none bg-white border border-gray-200 text-gray-500 dark:text-gray-400 py-2.5 px-3 pr-8 rounded-lg leading-tight focus:outline-none focus:bg-white focus:border-pg-primary-500 dark:bg-dark-eval-1 dark:text-pg-primary-200 dark:placeholder-pg-primary-200 dark:border-gray-600">
+                        class="block appearance-none bg-white border border-gray-200 text-gray-500 dark:text-gray-400 py-2.5 px-3 pr-8 rounded-md leading-tight focus:outline-none focus:bg-white focus:border-pg-primary-500 dark:bg-dark-eval-1 dark:text-pg-primary-200 dark:placeholder-pg-primary-200 dark:border-gray-600">
                         <option value="5">5</option>
                         <option value="10">10</option>
                         <option value="15">15</option>
@@ -57,8 +57,7 @@
                             </svg>
                         </div>
                         <input type="text" id="table-search"
-                        {{-- class=" rounded focus:border-purple-300 focus:ring   dark:bg-dark-eval-1 dark:focus:ring-offset-dark-eval-1" --}}
-                            class="form-input block w-80 pl-10 p-2.5 bg-white border-gray-200 dark:bg-dark-eval-1 text-sm rounded-lg focus:border-purple-300 focus:ring-purple-500 dark:border-gray-600 dark:placeholder-gray-400  dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                            class="form-input block w-40 sm:w-80 pl-10 p-2.5 bg-white dark:bg-dark-eval-1 border-gray-400 dark:border-gray-600 text-sm rounded-md focus:border-gray-400 focus:ring focus:ring-purple-500 focus:ring-offset-2 focus:ring-offset-white dark:placeholder-gray-400 dark:text-gray-300 dark:focus:ring-offset-dark-eval-1"
                             placeholder="Search Data">
                     </div>
                 </div>
