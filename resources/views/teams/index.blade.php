@@ -6,7 +6,7 @@
         <div class="flex flex-col items-start">
             <h2 class="text-xl font-semibold leading-tight">
                 {{ __('Data Teams') }}
-                <span class="px-3 py-1 text-xs text-blue-600 bg-blue-100 rounded-full dark:bg-gray-800 dark:text-blue-400">240 vendors</span>
+                <span class="px-3 py-1 text-xs text-blue-600 bg-blue-100 rounded-full dark:bg-gray-800 dark:text-blue-400">5 Teams</span>
             </h2>
             {{-- if admin --}}
             {{-- <p class="mt-2 text-sm text-gray-600 dark:text-gray-400">List of data for all teams at PT. Sinar Roda Utama.</p> --}}
@@ -26,22 +26,45 @@
         <!-- Table component -->
         <section class="container mx-auto">
 
-            <div class="pb-5">
-			    <label for="table-search" class="sr-only">Search</label>
-                <div class="relative mt-1">
-                    <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
-                        <svg class="w-5 h-5 text-gray-500 dark:text-gray-400" fill="currentColor" viewBox="0 0 20 20"
-                                xmlns="http://www.w3.org/2000/svg">
-                            <path fill-rule="evenodd"
-                                d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z"
-                                clip-rule="evenodd">
-                            </path>
+            <div class="flex justify-between">
+                
+                <div class="relative h-10">
+                    <select name="" id=""
+                        class="block appearance-none bg-white border border-gray-200 text-gray-500 dark:text-gray-400 py-2.5 px-3 pr-8 rounded-lg leading-tight focus:outline-none focus:bg-white focus:border-pg-primary-500 dark:bg-dark-eval-1 dark:text-pg-primary-200 dark:placeholder-pg-primary-200 dark:border-gray-600">
+                        <option value="5">5</option>
+                        <option value="10">10</option>
+                        <option value="15">15</option>
+                        <option value="20">20</option>
+                    </select>
+                    <div
+                        class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-pg-primary-700 dark:text-pg-primary-300">
+                        <svg class="pointer-events-none w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
                         </svg>
                     </div>
-				    <input type="text" id="table-search" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-80 pl-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Search Data">
                 </div>
-            </div>
 
+                <div class="pb-5">
+                    <label for="table-search" class="sr-only">Search</label>
+                    <div class="relative">
+                        <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
+                            <svg class="w-5 h-5 text-gray-500 dark:text-gray-400" fill="currentColor" viewBox="0 0 20 20"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd"
+                                    d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z"
+                                    clip-rule="evenodd">
+                                </path>
+                            </svg>
+                        </div>
+                        <input type="text" id="table-search"
+                        {{-- class=" rounded focus:border-purple-300 focus:ring   dark:bg-dark-eval-1 dark:focus:ring-offset-dark-eval-1" --}}
+                            class="form-input block w-80 pl-10 p-2.5 bg-white border-gray-200 dark:bg-dark-eval-1 text-sm rounded-lg focus:border-purple-300 focus:ring-purple-500 dark:border-gray-600 dark:placeholder-gray-400  dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                            placeholder="Search Data">
+                    </div>
+                </div>
+
+            </div>
+    
             <div class="flex flex-col">
                 <div class="-mx-4 -my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
                     <div class="inline-block min-w-full py-2 align-middle md:px-6 lg:px-8">
@@ -220,59 +243,39 @@
             </div>
 
             {{-- Table Pagination --}}
-            <div class="justify-between md:flex md:flex-row w-full items-center pt-10 pb-3 bg-white overflow-y-auto pl-2 pr-2 relative dark:bg-dark-eval-1">
-                
-                <div class="flex flex-row justify-center md:justify-start mb-2 md:mb-0">
-                    <div class="relative h-10">
-                        <select name="" id="" class="block appearance-none bg-pg-primary-50 border border-pg-primary-300 text-pg-primary-700 py-2 px-3 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-pg-primary-500 dark:bg-pg-primary-700 dark:text-pg-primary-200 dark:placeholder-pg-primary-200 dark:border-pg-primary-600">
-                            <option value="10">5</option>
-                            <option value="10">10</option>
-                            <option value="10">15</option>
-                            <option value="10">20</option>
-                        </select>
-                        <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-pg-primary-700 dark:text-pg-primary-300">
-                            <svg class="pointer-events-none w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-                            </svg>
-                        </div>
-                    </div>
-                    <div class="pl-4 hidden sm:block md:block lg:block w-full" style="padding-top: 6px;"></div>
+            
+            <div class="flex items-center justify-between mt-7">
+                <a href="#" class="flex items-center px-5 py-2 text-sm text-gray-700 capitalize transition-colors duration-200 bg-white border rounded-md gap-x-2 hover:bg-gray-100 dark:bg-gray-900 dark:text-gray-200 dark:border-gray-700 dark:hover:bg-gray-800">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5 rtl:-scale-x-100">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M6.75 15.75L3 12m0 0l3.75-3.75M3 12h18" />
+                    </svg>
+
+                    <span>
+                        previous
+                    </span>
+                </a>
+
+                <div class="items-center hidden md:flex gap-x-3">
+                    <a href="#" class="px-2 py-1 text-sm text-blue-500 rounded-md dark:bg-gray-800 bg-blue-100/60">1</a>
+                    <a href="#" class="px-2 py-1 text-sm text-gray-500 rounded-md dark:hover:bg-gray-800 dark:text-gray-300 hover:bg-gray-100">2</a>
+                    <a href="#" class="px-2 py-1 text-sm text-gray-500 rounded-md dark:hover:bg-gray-800 dark:text-gray-300 hover:bg-gray-100">3</a>
+                    <a href="#" class="px-2 py-1 text-sm text-gray-500 rounded-md dark:hover:bg-gray-800 dark:text-gray-300 hover:bg-gray-100">...</a>
+                    <a href="#" class="px-2 py-1 text-sm text-gray-500 rounded-md dark:hover:bg-gray-800 dark:text-gray-300 hover:bg-gray-100">12</a>
+                    <a href="#" class="px-2 py-1 text-sm text-gray-500 rounded-md dark:hover:bg-gray-800 dark:text-gray-300 hover:bg-gray-100">13</a>
+                    <a href="#" class="px-2 py-1 text-sm text-gray-500 rounded-md dark:hover:bg-gray-800 dark:text-gray-300 hover:bg-gray-100">14</a>
                 </div>
 
-                <div>
-                    <div class="items-center justify-between sm:flex">
-                        <div class="items-center justify-between w-full sm:flex-1 sm:flex">
-                            <div>
-                                <div class="mr-2 leading-5 text-center text-pg-primary-700 text-md dark:text-pg-primary-300 sm:text-right">
-                                    Showing
-                                    <span class="font-semibold firstItem">1</span>
-                                    to
-                                    <span class="font-semibold lastItem">10</span>
-                                    of
-                                    <span class="font-semibold total">13</span>
-                                    Results
-                                </div>
-                            </div>
+                <a href="#" class="flex items-center px-5 py-2 text-sm text-gray-700 capitalize transition-colors duration-200 bg-white border rounded-md gap-x-2 hover:bg-gray-100 dark:bg-gray-900 dark:text-gray-200 dark:border-gray-700 dark:hover:bg-gray-800">
+                    <span>
+                        Next
+                    </span>
 
-                            <nav role="navigation" aria-label="Pagination Navigation" class="items-center justify-between sm:flex">
-                                <div class="flex justify-center mt-2 md:flex-none md:justify-end sm:mt-0">
-                                    <span class="px-2 py-1 m-1 text-center border-pg-primary-400 rounded cursor-pointer border-1 dark:bg-pg-primary-800 dark:text-white dark:text-pg-primary-300">1</span>
-                                    <a class="px-2 py-1 m-1 text-center text-white bg-dark-eval-1 border-pg-primary-400 rounded cursor-pointer border-1 hover:bg-pg-primary-600 hover:border-pg-primary-800 dark:text-pg-primary-300" wire:click="gotoPage(2)">2</a>
-                                    <a class="px-2 py-1 pt-2 m-1 text-center text-white bg-dark-eval-1 border-pg-primary-400 rounded cursor-pointer border-1 hover:bg-pg-primary-600 hover:border-pg-primary-800 dark:text-pg-primary-300" wire:click="gotoPage(2)">
-                                        <svg width="16" height="16" fill="currentColor" class="bi bi-chevron-double-right" viewBox="0 0 16 16">
-                                            <path fill-rule="evenodd" d="M3.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L9.293 8 3.646 2.354a.5.5 0 0 1 0-.708z"></path>
-                                            <path fill-rule="evenodd" d="M7.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L13.293 8 7.646 2.354a.5.5 0 0 1 0-.708z"></path>
-                                        </svg>
-                                    </a>
-                                </div>
-                            </nav>
-
-                            <div></div>
-
-                        </div>
-                    </div>
-                </div>
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5 rtl:-scale-x-100">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3" />
+                    </svg>
+                </a>
             </div>
+        
         </section>
 
     </div>
