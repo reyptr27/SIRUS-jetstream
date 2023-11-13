@@ -30,8 +30,8 @@
                 
                 <div class="relative h-10">
                     <select name="" id=""
-                        class="block appearance-none bg-white border border-gray-200 text-gray-500 dark:text-gray-400 py-2.5 px-3 pr-8 rounded-md leading-tight focus:outline-none focus:bg-white focus:border-pg-primary-500 dark:bg-dark-eval-1 dark:text-pg-primary-200 dark:placeholder-pg-primary-200 dark:border-gray-600">
-                        <option value="5">5</option>
+                        class="block cursor-pointer appearance-none py-2.5 px-3 pr-8 leading-tight transition duration-150 ease-in-out bg-white dark:bg-dark-eval-1 border border-gray-200 dark:border-gray-600 dark:text-gray-300 rounded-md focus:ring focus:ring-purple-500 focus:ring-offset-2 focus:ring-offset-white dark:focus:ring-offset-dark-eval-1 dark:focus:bg-dark-eval-1 focus:outline-none dark:placeholder-gray-400 ">
+                        <option class="focus:bg-dark-eval-0" value="5">5</option>
                         <option value="10">10</option>
                         <option value="15">15</option>
                         <option value="20">20</option>
@@ -47,7 +47,7 @@
                 <div class="pb-5">
                     <label for="table-search" class="sr-only">Search</label>
                     <div class="relative">
-                        <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
+                        <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none ">
                             <svg class="w-5 h-5 text-gray-500 dark:text-gray-400" fill="currentColor" viewBox="0 0 20 20"
                                 xmlns="http://www.w3.org/2000/svg">
                                 <path fill-rule="evenodd"
@@ -57,7 +57,7 @@
                             </svg>
                         </div>
                         <input type="text" id="table-search"
-                            class="form-input block w-40 sm:w-80 pl-10 p-2.5 bg-white dark:bg-dark-eval-1 border-gray-400 dark:border-gray-600 text-sm rounded-md focus:border-gray-400 focus:ring focus:ring-purple-500 focus:ring-offset-2 focus:ring-offset-white dark:placeholder-gray-400 dark:text-gray-300 dark:focus:ring-offset-dark-eval-1"
+                            class="form-input block w-40 sm:w-80 pl-10 p-2.5 bg-white dark:bg-dark-eval-1 border-gray-400 dark:border-gray-600 text-sm rounded-md focus:border-gray-400 focus:ring focus:ring-purple-500 focus:ring-offset-2 focus:ring-offset-white dark:placeholder-gray-400 dark:text-gray-300 dark:focus:ring-offset-dark-eval-1 transition duration-150 ease-in-ou"
                             placeholder="Search Data">
                     </div>
                 </div>
@@ -67,8 +67,8 @@
             <div class="flex flex-col">
                 <div class="-mx-4 -my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
                     <div class="inline-block min-w-full py-2 align-middle md:px-6 lg:px-8">
-                        <div class="overflow-hidden border border-gray-200 dark:border-gray-700 md:rounded-lg">
-                            <table class="min-w-full divide-y divide-gray-200 dark:divide-gray-700">
+                        <div class="overflow-hidden border border-gray-200 dark:border-gray-600 md:rounded-lg">
+                            <table class="min-w-full divide-y divide-gray-200 dark:divide-gray-600">
                                 <thead class="bg-gray-50 dark:bg-gray-800">
                                     <tr>
                                         <th scope="col" class="py-3.5 px-4 text-sm font-normal text-left rtl:text-right text-gray-500 dark:text-gray-400">
@@ -244,7 +244,7 @@
             {{-- Table Pagination --}}
             
             <div class="flex items-center justify-between mt-7">
-                <a href="#" class="flex items-center px-5 py-2 text-sm text-gray-700 capitalize transition-colors duration-200 bg-white border rounded-md gap-x-2 hover:bg-gray-100 dark:bg-gray-900 dark:text-gray-200 dark:border-gray-700 dark:hover:bg-gray-800">
+                <a href="#" class="flex items-center px-5 py-2 text-sm text-gray-700 capitalize transition-colors duration-200 bg-white border rounded-md gap-x-2 hover:bg-gray-100 dark:bg-gray-900 dark:text-gray-200 dark:border-gray-600 border-gray-200 dark:hover:bg-gray-800">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5 rtl:-scale-x-100">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M6.75 15.75L3 12m0 0l3.75-3.75M3 12h18" />
                     </svg>
@@ -264,7 +264,7 @@
                     <a href="#" class="px-2 py-1 text-sm text-gray-500 rounded-md dark:hover:bg-gray-800 dark:text-gray-300 hover:bg-gray-100">14</a>
                 </div>
 
-                <a href="#" class="flex items-center px-5 py-2 text-sm text-gray-700 capitalize transition-colors duration-200 bg-white border rounded-md gap-x-2 hover:bg-gray-100 dark:bg-gray-900 dark:text-gray-200 dark:border-gray-700 dark:hover:bg-gray-800">
+                <a href="#" class="flex items-center px-5 py-2 text-sm text-gray-700 capitalize transition-colors duration-200 bg-white border rounded-md gap-x-2 hover:bg-gray-100 dark:bg-gray-900 dark:text-gray-200 dark:border-gray-600 border-gray-200 dark:hover:bg-gray-800">
                     <span>
                         Next
                     </span>
