@@ -92,28 +92,37 @@
             <x-slot name="content">
                  <!-- Account Management -->
                  <div class="block px-4 pt-2 pb-2 text-xs text-gray-400">
+                    @if (Laravel\Fortify\Features::enabled(Laravel\Fortify\Features::emailVerification()))
+                        {{ __('Signed in as') }}
+                        <x-span class="text-xs flex justify-between">
+                        @if (Auth::user()->hasVerifiedEmail())
+                            {{ Auth::user()->username }}
+                            {{-- If email verified --}}
+                            <div class="inline-flex items-center px-2 py-1 rounded-full -mt-1 gap-x-1 text-emerald-500 bg-emerald-100/60 dark:bg-gray-800">
+                                 <svg width="10" height="10" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M10 3L4.5 8.5L2 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+
+                                <h2 class="text-xs font-normal">Verified</h2>
+                            </div>
+                        @else
+                            {{ Auth::user()->username }}
+                            {{-- If email not verified --}}
+                            <div class="inline-flex items-center px-2 py-1 text-red-500 -mt-1 rounded-full gap-x-1 bg-red-100/60 dark:bg-gray-800">
+                                <svg width="10" height="10" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M9 3L3 9M3 3L9 9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+
+                                <h2 class="text-xs font-normal">Unverified</h2>
+                            </div>
+                        @endif
+                        </x-span>
+                    @else
                     {{ __('Signed in as') }}
-                    <x-span class="text-xs flex justify-between">
+                    <x-span class="text-xs flex justify-start">
                        {{ Auth::user()->username }}
-                       {{-- If email verified --}}
-                       {{-- <div class="inline-flex items-center px-2 py-1 rounded-full -mt-1 gap-x-1 text-emerald-500 bg-emerald-100/60 dark:bg-gray-800">
-                            <svg width="10" height="10" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M10 3L4.5 8.5L2 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                            </svg>
-
-                            <h2 class="text-xs font-normal">Verified</h2>
-                        </div> --}}
-                       
-                       {{-- If email not verified --}}
-                       <div class="inline-flex items-center px-2 py-1 text-red-500 -mt-1 rounded-full gap-x-1 bg-red-100/60 dark:bg-gray-800">
-                            <svg width="10" height="10" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M9 3L3 9M3 3L9 9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                            </svg>
-
-                            <h2 class="text-xs font-normal">Unverified</h2>
-                        </div>
-
                     </x-span>
+                    @endif
                 </div>
 
                 <div class="border-t border-gray-100 dark:border-gray-700"></div>
