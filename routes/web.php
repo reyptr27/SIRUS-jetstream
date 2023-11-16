@@ -1,8 +1,11 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+
 //App Route
-use App\Http\Controllers\UserController;
+use App\Http\Controllers\UsersController;
+use App\Http\Controllers\TeamsController;
+use Laravel\Jetstream\Jetstream;
 
 /*
 |--------------------------------------------------------------------------
@@ -24,16 +27,21 @@ Route::middleware([
     config('jetstream.auth_session'),
     'verified',
 ])->group(function () {
+    
     //Dashboard
     Route::get('/dashboard', function () {
         return view('dashboard');
     })->name('dashboard');
+    
+    //Users
+    Route::prefix('users')->group(function() {
+        Route::get('/', [UsersController::class, 'index'])->name('users.index');
+        Route::get('/json', [UsersController::class, 'json'])->name('users.json');
+    });
 
     //Teams
-    Route::get('/teams', function () {
-        return view('teams.index');
-    })->name('teams.index');
-
-    //Users
-    Route::get('/users', [UserController::class, 'index'])->name('users.index');
+    Route::prefix('teams')->group(function() {
+        Route::get('/', [TeamsController::class, 'index'])->name('teams.index');
+    });
+    Route::get('/teams/json', [TeamsController::class, 'json'])->name('teams.json');
 });
