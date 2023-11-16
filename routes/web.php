@@ -40,8 +40,6 @@ Route::middleware([
     });
 
     //Teams
-    Route::prefix('teams')->group(function() {
-        Route::get('/', [TeamsController::class, 'index'])->name('teams.index');
-    });
+    Route::get('/teams', [TeamsController::class, 'index'])->name('teams.index');
     Route::get('/teams/json', [TeamsController::class, 'json'])->name('teams.json');
 });
