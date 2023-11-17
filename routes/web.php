@@ -5,7 +5,6 @@ use Illuminate\Support\Facades\Route;
 //App Route
 use App\Http\Controllers\UsersController;
 use App\Http\Controllers\TeamsController;
-use Laravel\Jetstream\Jetstream;
 
 /*
 |--------------------------------------------------------------------------
@@ -40,6 +39,8 @@ Route::middleware([
     });
 
     //Teams
-    Route::get('/teams', [TeamsController::class, 'index'])->name('teams.index');
-    Route::get('/teams/json', [TeamsController::class, 'json'])->name('teams.json');
+    Route::prefix('teams')->group(function() {
+        Route::get('/', [TeamsController::class, 'index'])->name('teams.index');
+        Route::get('/json', [TeamsController::class, 'json'])->name('teams.json');
+    });
 });
