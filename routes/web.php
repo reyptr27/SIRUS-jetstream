@@ -17,15 +17,20 @@ use App\Http\Controllers\TeamsController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('dashboard');
+// });
 
 Route::middleware([
     'auth:sanctum',
     config('jetstream.auth_session'),
     'verified',
 ])->group(function () {
+
+    //Root or Home
+    Route::get('/', function () {
+        return redirect('/dashboard');
+    });
     
     //Dashboard
     Route::get('/dashboard', function () {
