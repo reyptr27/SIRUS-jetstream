@@ -80,7 +80,7 @@
                         <x-slot name="icon">
                             <x-heroicon-o-lock-closed aria-hidden="true" class="w-5 h-5" />
                         </x-slot>
-                        <input id="password" class="form-input block w-full pl-11 pr-4 py-2 border-gray-400 rounded-md focus:border-gray-400 focus:ring
+                        <input id="password" class="form-input block w-full pl-11 pr-10 py-2 border-gray-400 rounded-md focus:border-gray-400 focus:ring
                             focus:ring-purple-500 focus:ring-offset-2 focus:ring-offset-white dark:border-gray-600 dark:bg-dark-eval-1
                             dark:text-gray-300 dark:focus:ring-offset-dark-eval-1" type="password" name="password" required
                             :type="showPassword ? 'password' : 'text'" autocomplete="off" placeholder="{{ __('Password') }}" />
@@ -121,7 +121,7 @@
                         <x-slot name="icon">
                             <x-heroicon-o-lock-closed aria-hidden="true" class="w-5 h-5" />
                         </x-slot>
-                        <input id="password_confirmation" class="form-input block w-full pl-11 pr-4 py-2 border-gray-400 rounded-md focus:border-gray-400 focus:ring
+                        <input id="password_confirmation" class="form-input block w-full pl-11 pr-10 py-2 border-gray-400 rounded-md focus:border-gray-400 focus:ring
                             focus:ring-purple-500 focus:ring-offset-2 focus:ring-offset-white dark:border-gray-600 dark:bg-dark-eval-1
                             dark:text-gray-300 dark:focus:ring-offset-dark-eval-1" type="password" name="password_confirmation" 
                             :type="showConfirmPassword ? 'password' : 'text'" autocomplete="off" required placeholder="{{ __('Confirm Password') }}" />
