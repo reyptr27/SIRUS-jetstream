@@ -1,5 +1,5 @@
 <div class="grid gap-6">
-    <div class="flex">
+    <div class="grid sm:flex">
         {{-- Custom password form with hide/unhide feature --}}   
         <div class="space-y-2" x-data="{ showPassword: true }">
             <x-label for="password" :value="__('Password')" />
@@ -29,9 +29,13 @@
             </x-input-with-icon-wrapper>
         </div>
         
-        <div class="flex items-end place-content-end ml-2"> 
-            <x-button variant="primary" wire:click="generatePassword" type="button">Generate</x-button>
+        <div class="mt-5 sm:mt-0 sm:flex sm:ml-2 sm:items-end sm:place-content-end"> 
+            <x-button class="justify-center w-full gap-2 pt-2.5" variant="primary" wire:click="generatePassword" type="button">
+                <x-heroicon-o-key class="w-6 h-6" aria-hidden="true" />
+                <span>{{ __('Generate') }}</span>
+            </x-button>
         </div> 
+
     </div>
 
     {{-- Custom confirm password form with hide/unhide feature --}}   
