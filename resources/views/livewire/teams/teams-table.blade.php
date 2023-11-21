@@ -1,4 +1,20 @@
-<div class="p-6 gap-6 overflow-hidden bg-white rounded-md shadow-md lg:flex-row md:justify-between dark:bg-dark-eval-1">
+<div class="">
+    <div class="flex justify-end mb-5 sm:pt-2 sm:items-end" >
+        <x-button href="{{ route('teams.create') }}" variant="success"
+            class="items-center max-w-xs mx-1">
+            <span>Create New Team</span>
+        </x-button>
+        <x-button variant="danger" 
+           x-on:click="$wire.$deleteSelected()"
+           wire:confirm="Are you sure you want to delete this team's?"
+           class="items-center max-w-xs mx-1">
+    
+           <span>Bulk Delete</span>
+           
+        </x-button>
+    </div>
+
+    <div class="p-6 gap-6 overflow-hidden bg-white rounded-md shadow-md lg:flex-row md:justify-between dark:bg-dark-eval-1">
         <!-- Table component -->
         <section class="container mx-auto">
 
@@ -39,7 +55,6 @@
                 </div>
 
             </div>
-            <button wire:click="deleteSelected" class="bg-red-500 text-white p-2 mb-2">Delete Selected</button>
     
             <div class="flex flex-col">
                 <div class="-mx-4 -my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
@@ -175,3 +190,4 @@
         </section>
 
     </div>
+</div>

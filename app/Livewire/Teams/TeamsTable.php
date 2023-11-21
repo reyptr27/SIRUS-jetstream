@@ -1,14 +1,13 @@
 <?php
 
-namespace App\Livewire;
+namespace App\Livewire\Teams;
 
 use App\Models\Team;
 use Livewire\Component;              
-use Livewire\WithPagination;          
+use Livewire\WithPagination;    
 
 class TeamsTable extends Component
 {
-    
     use WithPagination;
     
     // protected $paginationTheme = 'tailwind';
@@ -18,8 +17,10 @@ class TeamsTable extends Component
     
     public function render()
     {
-        return view('livewire.teams-table')->with([
-            'teams' => Team::with('user')->paginate(3)
+        $teams = Team::with('user')->paginate(3);
+        
+        return view('livewire.teams.teams-table', [
+            'teams' => $teams,
         ]);
     }
     
