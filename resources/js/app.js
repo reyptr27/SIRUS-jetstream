@@ -1,3 +1,5 @@
+// app.js
+
 import "./bootstrap";
 import PerfectScrollbar from "perfect-scrollbar";
 
@@ -6,6 +8,7 @@ window.PerfectScrollbar = PerfectScrollbar;
 document.addEventListener("alpine:init", () => {
     Alpine.data("mainState", () => {
         let lastScrollTop = 0;
+
         const init = function () {
             window.addEventListener("scroll", () => {
                 let st =
@@ -19,7 +22,7 @@ document.addEventListener("alpine:init", () => {
                     this.scrollingDown = false;
                     this.scrollingUp = true;
                     if (st == 0) {
-                        //  reset
+                        // reset
                         this.scrollingDown = false;
                         this.scrollingUp = false;
                     }
@@ -37,15 +40,41 @@ document.addEventListener("alpine:init", () => {
                 window.matchMedia("(prefers-color-scheme: dark)").matches
             );
         };
+
         const setTheme = (value) => {
             window.localStorage.setItem("dark", value);
         };
+
+        const toggleFullscreen = () => {
+            const isFullscreen =
+                document.fullscreenElement || document.webkitFullscreenElement;
+
+            if (!isFullscreen) {
+                if (document.documentElement.requestFullscreen) {
+                    document.documentElement.requestFullscreen();
+                } else if (document.documentElement.webkitRequestFullscreen) {
+                    document.documentElement.webkitRequestFullscreen();
+                }
+            } else {
+                if (document.exitFullscreen) {
+                    document.exitFullscreen();
+                } else if (document.webkitExitFullscreen) {
+                    document.webkitExitFullscreen();
+                }
+            }
+        };
+
         return {
             init,
             isDarkMode: getTheme(),
             toggleTheme() {
                 this.isDarkMode = !this.isDarkMode;
                 setTheme(this.isDarkMode);
+            },
+            isFullscreen: false,
+            toggleFullscreen() {
+                this.isFullscreen = !this.isFullscreen;
+                toggleFullscreen(this.isFullscreen);
             },
             isSidebarOpen: window.innerWidth > 1024,
             isSidebarHovered: false,

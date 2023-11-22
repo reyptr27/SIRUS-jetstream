@@ -23,6 +23,22 @@ class TeamsTable extends Component
             'teams' => $teams,
         ]);
     }
+
+    public function toggleSelectAll()
+    {
+        $this->selectAll = !$this->selectAll;
+        dd($this->selectAll);
+    }
+
+    public function toggleTeamSelection($teamId)
+    {
+        if (in_array($teamId, $this->selectedTeams)) {
+            $this->selectedTeams = array_diff($this->selectedTeams, [$teamId]);
+        } else {
+            $this->selectedTeams[] = $teamId;
+        }
+        // dd($this->selectedTeams);
+    }
     
     public function deleteSelected()
     {

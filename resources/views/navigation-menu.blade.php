@@ -14,11 +14,18 @@
     </div>
 
     <div class="flex items-center gap-3">
+        <x-button type="button" class="hidden md:inline-flex" iconOnly variant="secondary" srText="Toggle full screen"
+            @click="toggleFullscreen">
+            <x-heroicon-o-arrows-pointing-out  x-show="!isFullscreen" aria-hidden="true" class="w-6 h-6" />
+            <x-heroicon-o-arrows-pointing-in x-show="isFullscreen" aria-hidden="true" class="w-6 h-6" />
+        </x-button>
+
         <x-button type="button" class="hidden md:inline-flex" iconOnly variant="secondary" srText="Toggle dark mode"
             @click="toggleTheme">
             <x-heroicon-o-moon x-show="!isDarkMode" aria-hidden="true" class="w-6 h-6" />
             <x-heroicon-o-sun x-show="isDarkMode" aria-hidden="true" class="w-6 h-6" />
         </x-button>
+       
 
         <!-- Teams Dropdown -->
         @if (Laravel\Jetstream\Jetstream::hasTeamFeatures() && Auth::user()->currentTeam != null)

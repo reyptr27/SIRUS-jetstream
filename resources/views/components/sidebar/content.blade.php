@@ -75,7 +75,7 @@
             Str::startsWith(request()->route()->uri(), 'teams')" >
         
             <x-slot name="icon">
-                <x-heroicon-o-office-building class="flex-shrink-0 w-6 h-6" aria-hidden="true" />
+                <x-heroicon-o-building-office-2 class="flex-shrink-0 w-6 h-6" aria-hidden="true" />
             </x-slot>
             
             <x-sidebar.sublink title="Teams" href="{{ route('teams.index') }}"

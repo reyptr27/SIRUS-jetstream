@@ -57,7 +57,7 @@
                             <x-heroicon-o-eye aria-hidden="true" class="w-6 h-6" />
                         </button>
                         <button type="button" class="flex absolute inset-y-0 right-0 items-center pr-3" @click="showPassword = !showPassword" :class="{'block': !showPassword, 'hidden': showPassword }">
-                            <x-heroicon-o-eye-off aria-hidden="true" class="w-6 h-6" />
+                            <x-heroicon-o-eye-slash aria-hidden="true" class="w-6 h-6" />
                         </button>
                     </x-input-with-icon-wrapper>
                 </div>
@@ -80,7 +80,7 @@
             
                 <div>
                     <x-button class="justify-center w-full gap-2">
-                        <x-heroicon-o-login class="w-6 h-6" aria-hidden="true" />
+                        <x-heroicon-m-arrow-left-on-rectangle class="w-6 h-6" aria-hidden="true" />
                         <span>{{ __('Log in') }}</span>
                     </x-button>
                 </div>

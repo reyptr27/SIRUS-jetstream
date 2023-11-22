@@ -18,7 +18,7 @@
                 </button>
 
                 <button type="button" class="flex absolute inset-y-0 right-0 items-center pr-3" @click="showPassword = !showPassword" :class="{'block': !showPassword, 'hidden': showPassword }">
-                    <x-heroicon-o-eye-off aria-hidden="true" class="w-6 h-6" />
+                    <x-heroicon-o-eye-slash aria-hidden="true" class="w-6 h-6" />
                 </button>
             </x-input-with-icon-wrapper>
         </div>
@@ -50,7 +50,7 @@
             </button>
 
             <button type="button" class="flex absolute inset-y-0 right-0 items-center pr-3" @click="showConfirmPassword = !showConfirmPassword" :class="{'block': !showConfirmPassword, 'hidden': showConfirmPassword }">
-                <x-heroicon-o-eye-off aria-hidden="true" class="w-6 h-6" />
+                <x-heroicon-o-eye-slash aria-hidden="true" class="w-6 h-6" />
             </button>
         </x-input-with-icon-wrapper>
     </div>
