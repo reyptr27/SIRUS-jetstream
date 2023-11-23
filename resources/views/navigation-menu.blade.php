@@ -26,14 +26,14 @@
             <x-heroicon-o-sun x-show="isDarkMode" aria-hidden="true" class="w-6 h-6" />
         </x-button>
 
-        <x-dropdown align="right" width="60">
+        <x-dropdown align="right" dropdownClasses="hidden md:block">
             <x-slot name="trigger">
-                <button srText="Change language" type="button" class="inline-flex p-2 text-sm font-medium items-center rounded-md transition ease-in-out duration-150 text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-dark-eval-2 hover:text-gray-700 dark:hover:text-gray-200 focus:ring focus:outline-none focus:ring-purple-500 focus:ring-offset-1 focus:ring-offset-white dark:focus:ring-offset-dark-eval-1">
+                <button srText="Change language" type="button" class="hidden md:inline-flex p-2 text-sm font-medium items-center rounded-md transition ease-in-out duration-150 text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-dark-eval-2 hover:text-gray-700 dark:hover:text-gray-200 focus:ring focus:outline-none focus:ring-purple-500 focus:ring-offset-1 focus:ring-offset-white dark:focus:ring-offset-dark-eval-1">
                     <x-heroicon-o-language aria-hidden="true" class=" h-6 w-6" />
                 </button>
             </x-slot>
             <x-slot name="content">
-                <div class="w-50">
+                <div class="w-60">
                     <!-- Change Language -->
                     <div class="block px-4 py-2 text-xs text-gray-400">
                         {{ __('Change Language') }}
