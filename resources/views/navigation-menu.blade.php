@@ -16,27 +16,45 @@
     <div class="flex items-center gap-3">
         <x-button type="button" class="hidden md:inline-flex" iconOnly variant="secondary" srText="Toggle full screen"
             @click="toggleFullscreen">
-            <x-heroicon-o-arrows-pointing-out  x-show="!isFullscreen" aria-hidden="true" class="w-6 h-6" />
+            <x-heroicon-o-arrows-pointing-out x-show="!isFullscreen" aria-hidden="true" class="w-6 h-6" />
             <x-heroicon-o-arrows-pointing-in x-show="isFullscreen" aria-hidden="true" class="w-6 h-6" />
         </x-button>
-
+          
         <x-button type="button" class="hidden md:inline-flex" iconOnly variant="secondary" srText="Toggle dark mode"
             @click="toggleTheme">
             <x-heroicon-o-moon x-show="!isDarkMode" aria-hidden="true" class="w-6 h-6" />
             <x-heroicon-o-sun x-show="isDarkMode" aria-hidden="true" class="w-6 h-6" />
         </x-button>
-       
+
+        <x-dropdown align="right" width="60">
+            <x-slot name="trigger">
+                <button srText="Change language" type="button" class="inline-flex p-2 text-sm font-medium items-center rounded-md transition ease-in-out duration-150 text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-dark-eval-2 hover:text-gray-700 dark:hover:text-gray-200 focus:ring focus:outline-none focus:ring-purple-500 focus:ring-offset-1 focus:ring-offset-white dark:focus:ring-offset-dark-eval-1">
+                    <x-heroicon-o-language aria-hidden="true" class=" h-6 w-6" />
+                </button>
+            </x-slot>
+            <x-slot name="content">
+                <div class="w-50">
+                    <!-- Change Language -->
+                    <div class="block px-4 py-2 text-xs text-gray-400">
+                        {{ __('Change Language') }}
+                    </div>
+
+                    @foreach (Auth::user()->allTeams() as $team)
+                        <x-switchable-team :team="$team" />
+                    @endforeach
+                </div>
+            </x-slot>
+        </x-dropdown>
 
         <!-- Teams Dropdown -->
         @if (Laravel\Jetstream\Jetstream::hasTeamFeatures() && Auth::user()->currentTeam != null)
             <x-dropdown align="right" width="60">
                 <x-slot name="trigger">
                     <button type="button" class="inline-flex items-center rounded-md p-2 text-sm font-medium text-gray-500 transition duration-150 ease-in-out hover:text-gray-700 focus:outline-none focus:ring focus:ring-purple-500 focus:ring-offset-1 focus:ring-offset-white dark:focus:ring-offset-dark-eval-1 dark:text-gray-400 dark:hover:text-gray-200">
+                        
                         {{ Auth::user()->currentTeam->name }}
+                        <x-heroicon-o-chevron-up-down class="ml-2 -mr-0.5 h-5 w-5" aria-hidden="true" />
 
-                        <svg class="ml-2 -mr-0.5 h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
-                            <path fill-rule="evenodd" d="M10 3a1 1 0 01.707.293l3 3a1 1 0 01-1.414 1.414L10 5.414 7.707 7.707a1 1 0 01-1.414-1.414l3-3A1 1 0 0110 3zm-3.707 9.293a1 1 0 011.414 0L10 14.586l2.293-2.293a1 1 0 011.414 1.414l-3 3a1 1 0 01-1.414 0l-3-3a1 1 0 010-1.414z" clip-rule="evenodd" />
-                        </svg>
                     </button>
                 </x-slot>
 
